@@ -1,16 +1,18 @@
 package com.epam.currency.logic.choiseofdecision;
 
 import com.epam.currency.entity.Client;
-import com.epam.currency.entity.ClientAccount;
+import com.epam.currency.entity.BankAccount;
 import com.epam.currency.entity.Stock;
 
+/**
+ * Pays some BYN to get 30% profit in dollars
+ */
 public class BuyCurrency implements Decision {
-
     private double money;
 
     @Override
-    public synchronized void setMoney(Client client) {
-        ClientAccount clientAccount = client.getClientAccount();
+    public void setMoney(Client client) {
+        BankAccount clientAccount = client.getBankAccount();
         double currentUSD = clientAccount.getUSD();
         double newBidInUSD = 0.3*currentUSD;
 
@@ -20,12 +22,7 @@ public class BuyCurrency implements Decision {
     }
 
     @Override
-    public void setMoney(double money) {
-        this.money = money;
-    }
-
-    @Override
-    public synchronized double getMoney() {
+    public double getMoney() {
         return money;
     }
 }

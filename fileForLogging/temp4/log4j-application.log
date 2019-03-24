@@ -1,0 +1,566 @@
+2019-03-23 20:09:43 INFO  Stock:104 -    stock begin running
+
+2019-03-23 20:09:43 INFO  Stock:86 -      ####    new coefficient: 1.418873043505739    ####
+
+2019-03-23 20:09:43 INFO  Stock:87 - ****************( Participants Notify Starts )******************
+2019-03-23 20:09:43 INFO  Client:50 - client1 is notified
+2019-03-23 20:09:43 INFO  Client:50 - client2 is notified
+2019-03-23 20:09:43 INFO  Client:50 - client3 is notified
+2019-03-23 20:09:43 INFO  Client:50 - client4 is notified
+2019-03-23 20:09:44 INFO  Stock:96 - ****************( Participants Notify Ends )******************
+
+2019-03-23 20:09:44 INFO  Stock:107 -    stock end running
+
+2019-03-23 20:09:44 INFO  Client:66 -    ---- client1 entered the stock ----
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Client:68 - client1 coefficients: [1.5230448833835828, 1.418873043505739]
+2019-03-23 20:09:44 INFO  Client:76 - client1 sells 279.4808726227917 USD
+
+2019-03-23 20:09:44 INFO  Stock:86 -      ####    new coefficient: 1.218873043505739    ####
+
+2019-03-23 20:09:44 INFO  Stock:87 - ****************( Participants Notify Starts )******************
+2019-03-23 20:09:44 INFO  Client:50 - client1 is notified
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Client:50 - client2 is notified
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Client:50 - client3 is notified
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Client:50 - client4 is notified
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Stock:96 - ****************( Participants Notify Ends )******************
+
+2019-03-23 20:09:44 INFO  Client:82 -    client1 exits the stock
+
+2019-03-23 20:09:44 INFO  Client:66 -    ---- client4 entered the stock ----
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Client:68 - client4 coefficients: [1.1530137071354731, 1.418873043505739, 1.218873043505739]
+2019-03-23 20:09:44 INFO  Client:76 - client4 sells 8.590430617345145 USD
+
+2019-03-23 20:09:44 INFO  Stock:86 -      ####    new coefficient: 1.0188730435057392    ####
+
+2019-03-23 20:09:44 INFO  Stock:87 - ****************( Participants Notify Starts )******************
+2019-03-23 20:09:44 INFO  Client:50 - client2 is notified
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Client:50 - client3 is notified
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Client:50 - client4 is notified
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 DEBUG Client:85 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 20:09:44 INFO  Stock:96 - ****************( Participants Notify Ends )******************
+
+2019-03-23 20:09:44 INFO  Client:82 -    client4 exits the stock
+
+2019-03-23 20:09:44 INFO  Client:66 -    ---- client2 entered the stock ----
+2019-03-23 20:09:44 INFO  Client:66 -    ---- client3 entered the stock ----
+2019-03-23 20:09:44 INFO  Client:68 - client2 coefficients: [1.4365371301693364, 1.418873043505739, 1.218873043505739, 1.0188730435057392]
+2019-03-23 20:09:44 INFO  Client:68 - client3 coefficients: [1.445363298942707, 1.418873043505739, 1.218873043505739, 1.0188730435057392]
+2019-03-23 20:09:44 INFO  Client:76 - client2 sells 354.6281617467264 USD
+
+2019-03-23 20:09:44 INFO  Client:76 - client3 sells 126.88653985139189 USD
+
+2019-03-23 20:09:44 INFO  Stock:86 -      ####    new coefficient: 0.8188730435057392    ####
+
+2019-03-23 20:09:44 INFO  Stock:87 - ****************( Participants Notify Starts )******************
+2019-03-23 20:09:44 INFO  Client:50 - client2 is notified
+2019-03-23 20:09:45 INFO  Client:50 - client3 is notified
+2019-03-23 20:09:45 INFO  Stock:96 - ****************( Participants Notify Ends )******************
+
+2019-03-23 20:09:45 INFO  Client:82 -    client2 exits the stock
+
+2019-03-23 20:09:45 INFO  Stock:86 -      ####    new coefficient: 0.6188730435057392    ####
+
+2019-03-23 20:09:45 INFO  Stock:87 - ****************( Participants Notify Starts )******************
+2019-03-23 20:09:45 INFO  Client:50 - client3 is notified
+2019-03-23 20:09:45 INFO  Stock:96 - ****************( Participants Notify Ends )******************
+
+2019-03-23 20:09:45 INFO  Client:82 -    client3 exits the stock
+
+2019-03-23 20:09:45 INFO  Run:46 -      -^-^-^-^- All clients exited stock -^-^-^-^- 
+
+2019-03-23 20:09:45 INFO  Run:47 -         ^-^-^-^-^-^ Bargaining ends ^-^-^-^-^-^ 
+
+
+2019-03-23 20:32:12 INFO  Stock:104 -    stock begin running
+
+2019-03-23 20:32:12 INFO  Stock:86 -      ####    new coefficient: 1.670383152485454    ####
+
+2019-03-23 20:32:12 INFO  Stock:87 - ****************( Participants Notify Starts )******************
+2019-03-23 20:32:12 INFO  Client:50 - client1 is notified
+2019-03-23 20:36:08 ERROR Director:32 - File is not found
+java.io.FileNotFoundException:  (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:220)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:158)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:113)
+	at com.epam.currency.scanner.FileReader.read(FileReader.java:20)
+	at com.epam.currency.scanner.FileReaderTest.shouldFileReaderReadNoSuchFileSupplied(FileReaderTest.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+2019-03-23 21:40:41 INFO  Runner:26 - Reading and creating clients from file
+2019-03-23 21:40:41 INFO  Runner:32 - List of clients has been created successfully
+2019-03-23 21:40:41 INFO  Stock:100 -    stock begin running
+
+2019-03-23 21:40:41 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-23 21:40:41 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:41 INFO  Client:56 - client1 is notified
+2019-03-23 21:40:41 INFO  Client:56 - client2 is notified
+2019-03-23 21:40:41 INFO  Client:56 - client3 is notified
+2019-03-23 21:40:41 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:41 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:41 INFO  Stock:102 -    stock end running
+
+2019-03-23 21:40:41 INFO  Client:72 -    ---- client2 entered the stock ----
+2019-03-23 21:40:41 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:41 DEBUG Client:91 -               $$$$   client1 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:41 INFO  Client:74 - client2 coefficients: [1.496026919747206, 2.0]
+2019-03-23 21:40:41 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:41 INFO  Client:79 - client2 buys USD for 75.0 BYN
+
+2019-03-23 21:40:41 INFO  Stock:82 -      ####    new coefficient: 2.2    ####
+
+2019-03-23 21:40:41 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:41 INFO  Client:56 - client1 is notified
+2019-03-23 21:40:41 INFO  Client:56 - client2 is notified
+2019-03-23 21:40:41 INFO  Client:56 - client3 is notified
+2019-03-23 21:40:41 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:42 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:42 INFO  Client:88 -    client2 exits the stock
+
+2019-03-23 21:40:42 DEBUG Client:91 -               $$$$   client1 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:42 INFO  Client:72 -    ---- client3 entered the stock ----
+2019-03-23 21:40:42 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:42 INFO  Client:74 - client3 coefficients: [1.2206189927046882, 2.0, 2.2]
+2019-03-23 21:40:42 INFO  Client:82 - client3 sells 180.0 USD
+
+2019-03-23 21:40:42 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-23 21:40:42 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:42 INFO  Client:56 - client1 is notified
+2019-03-23 21:40:42 INFO  Client:56 - client3 is notified
+2019-03-23 21:40:42 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:42 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:42 INFO  Client:88 -    client3 exits the stock
+
+2019-03-23 21:40:42 INFO  Client:72 -    ---- client1 entered the stock ----
+2019-03-23 21:40:42 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:42 INFO  Client:74 - client1 coefficients: [1.1334274048381916, 2.0, 2.2, 2.0]
+2019-03-23 21:40:42 INFO  Client:82 - client1 sells 272.7272727272727 USD
+
+2019-03-23 21:40:42 INFO  Stock:82 -      ####    new coefficient: 1.8    ####
+
+2019-03-23 21:40:42 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:42 INFO  Client:56 - client1 is notified
+2019-03-23 21:40:42 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:42 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:42 INFO  Client:88 -    client1 exits the stock
+
+2019-03-23 21:40:43 INFO  Client:72 -    ---- client4 entered the stock ----
+2019-03-23 21:40:43 INFO  Client:74 - client4 coefficients: [1.3660350779660593, 2.0, 2.2, 2.0, 1.8]
+2019-03-23 21:40:43 INFO  Client:82 - client4 sells 8.181818181818182 USD
+
+2019-03-23 21:40:43 INFO  Stock:82 -      ####    new coefficient: 1.6    ####
+
+2019-03-23 21:40:43 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:43 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:43 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:43 INFO  Client:88 -    client4 exits the stock
+
+2019-03-23 21:40:43 INFO  Runner:63 -      -^-^-^-^- All clients exited stock -^-^-^-^- 
+
+2019-03-23 21:40:43 INFO  Runner:64 -         ^-^-^-^-^-^ Bargaining ends ^-^-^-^-^-^ 
+
+
+2019-03-23 21:40:57 INFO  Runner:26 - Reading and creating clients from file
+2019-03-23 21:40:57 INFO  Runner:32 - List of clients has been created successfully
+2019-03-23 21:40:57 INFO  Stock:100 -    stock begin running
+
+2019-03-23 21:40:57 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-23 21:40:57 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:57 INFO  Client:56 - client1 is notified
+2019-03-23 21:40:57 INFO  Client:56 - client2 is notified
+2019-03-23 21:40:57 INFO  Client:56 - client3 is notified
+2019-03-23 21:40:57 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:57 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:57 INFO  Stock:102 -    stock end running
+
+2019-03-23 21:40:57 INFO  Client:72 -    ---- client2 entered the stock ----
+2019-03-23 21:40:57 INFO  Client:74 - client2 coefficients: [1.216245439914708, 2.0]
+2019-03-23 21:40:57 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:57 INFO  Client:79 - client2 buys USD for 75.0 BYN
+
+2019-03-23 21:40:57 DEBUG Client:91 -               $$$$   client1 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:57 INFO  Stock:82 -      ####    new coefficient: 2.2    ####
+
+2019-03-23 21:40:57 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:57 INFO  Client:56 - client1 is notified
+2019-03-23 21:40:57 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:57 INFO  Client:56 - client2 is notified
+2019-03-23 21:40:58 INFO  Client:56 - client3 is notified
+2019-03-23 21:40:58 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:58 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:58 INFO  Client:88 -    client2 exits the stock
+
+2019-03-23 21:40:58 INFO  Client:72 -    ---- client3 entered the stock ----
+2019-03-23 21:40:58 INFO  Client:74 - client3 coefficients: [1.3537073374288597, 2.0, 2.2]
+2019-03-23 21:40:58 DEBUG Client:91 -               $$$$   client1 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:58 INFO  Client:82 - client3 sells 180.0 USD
+
+2019-03-23 21:40:58 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-23 21:40:58 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:58 INFO  Client:56 - client1 is notified
+2019-03-23 21:40:58 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:58 INFO  Client:56 - client3 is notified
+2019-03-23 21:40:58 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:58 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:58 INFO  Client:88 -    client3 exits the stock
+
+2019-03-23 21:40:58 INFO  Client:72 -    ---- client1 entered the stock ----
+2019-03-23 21:40:58 INFO  Client:74 - client1 coefficients: [1.5181662453071334, 2.0, 2.2, 2.0]
+2019-03-23 21:40:58 INFO  Client:82 - client1 sells 272.7272727272727 USD
+
+2019-03-23 21:40:58 INFO  Stock:82 -      ####    new coefficient: 1.8    ####
+
+2019-03-23 21:40:58 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:58 INFO  Client:56 - client1 is notified
+2019-03-23 21:40:58 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:40:58 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:59 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:59 INFO  Client:88 -    client1 exits the stock
+
+2019-03-23 21:40:59 INFO  Client:72 -    ---- client4 entered the stock ----
+2019-03-23 21:40:59 INFO  Client:74 - client4 coefficients: [1.3870621439707913, 2.0, 2.2, 2.0, 1.8]
+2019-03-23 21:40:59 INFO  Client:82 - client4 sells 8.181818181818182 USD
+
+2019-03-23 21:40:59 INFO  Stock:82 -      ####    new coefficient: 1.6    ####
+
+2019-03-23 21:40:59 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:40:59 INFO  Client:56 - client4 is notified
+2019-03-23 21:40:59 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:40:59 INFO  Client:88 -    client4 exits the stock
+
+2019-03-23 21:40:59 INFO  Runner:63 -      -^-^-^-^- All clients exited stock -^-^-^-^- 
+
+2019-03-23 21:40:59 INFO  Runner:64 -         ^-^-^-^-^-^ Bargaining ends ^-^-^-^-^-^ 
+
+
+2019-03-23 21:42:52 ERROR Director:36 - File is not found
+java.io.FileNotFoundException:  (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:220)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:158)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:113)
+	at com.epam.currency.scanner.FileReader.read(FileReader.java:24)
+	at com.epam.currency.scanner.FileReaderTest.shouldFileReaderReadNoSuchFileSupplied(FileReaderTest.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+2019-03-23 21:58:59 INFO  Runner:26 - Reading and creating clients from file
+2019-03-23 21:58:59 INFO  Runner:32 - List of clients has been created successfully
+2019-03-23 21:58:59 INFO  Stock:100 -    stock begin running
+
+2019-03-23 21:58:59 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-23 21:58:59 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:58:59 INFO  Client:56 - client1 is notified
+2019-03-23 21:58:59 INFO  Client:56 - client2 is notified
+2019-03-23 21:58:59 INFO  Client:56 - client3 is notified
+2019-03-23 21:58:59 INFO  Client:56 - client4 is notified
+2019-03-23 21:58:59 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:58:59 INFO  Stock:102 -    stock end running
+
+2019-03-23 21:58:59 INFO  Client:72 -    ---- client4 entered the stock ----
+2019-03-23 21:58:59 INFO  Client:74 - client4 coefficients: [1.282960634203935, 2.0]
+2019-03-23 21:58:59 DEBUG Client:91 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:58:59 DEBUG Client:91 -               $$$$   client1 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:58:59 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:58:59 INFO  Client:79 - client4 buys USD for 1.5 BYN
+
+2019-03-23 21:58:59 INFO  Stock:82 -      ####    new coefficient: 2.2    ####
+
+2019-03-23 21:58:59 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:58:59 INFO  Client:56 - client1 is notified
+2019-03-23 21:58:59 INFO  Client:56 - client2 is notified
+2019-03-23 21:59:00 INFO  Client:56 - client3 is notified
+2019-03-23 21:59:00 INFO  Client:56 - client4 is notified
+2019-03-23 21:59:00 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:59:00 INFO  Client:88 -    client4 exits the stock
+
+2019-03-23 21:59:00 INFO  Client:72 -    ---- client2 entered the stock ----
+2019-03-23 21:59:00 DEBUG Client:91 -               $$$$   client1 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:59:00 INFO  Client:74 - client2 coefficients: [1.445214540269597, 2.0, 2.2]
+2019-03-23 21:59:00 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:59:00 INFO  Client:82 - client2 sells 499.99999999999994 USD
+
+2019-03-23 21:59:00 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-23 21:59:00 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:59:00 INFO  Client:56 - client1 is notified
+2019-03-23 21:59:00 INFO  Client:56 - client2 is notified
+2019-03-23 21:59:00 INFO  Client:56 - client3 is notified
+2019-03-23 21:59:00 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:59:00 INFO  Client:88 -    client2 exits the stock
+
+2019-03-23 21:59:00 INFO  Client:72 -    ---- client1 entered the stock ----
+2019-03-23 21:59:00 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-23 21:59:00 INFO  Client:74 - client1 coefficients: [1.5134776668111356, 2.0, 2.2, 2.0]
+2019-03-23 21:59:00 INFO  Client:82 - client1 sells 272.7272727272727 USD
+
+2019-03-23 21:59:00 INFO  Stock:82 -      ####    new coefficient: 1.8    ####
+
+2019-03-23 21:59:00 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:59:00 INFO  Client:56 - client1 is notified
+2019-03-23 21:59:00 INFO  Client:56 - client3 is notified
+2019-03-23 21:59:01 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:59:01 INFO  Client:88 -    client1 exits the stock
+
+2019-03-23 21:59:01 INFO  Client:72 -    ---- client3 entered the stock ----
+2019-03-23 21:59:01 INFO  Client:74 - client3 coefficients: [1.2975643176844618, 2.0, 2.2, 2.0, 1.8]
+2019-03-23 21:59:01 INFO  Client:82 - client3 sells 147.27272727272725 USD
+
+2019-03-23 21:59:01 INFO  Stock:82 -      ####    new coefficient: 1.6    ####
+
+2019-03-23 21:59:01 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-23 21:59:01 INFO  Client:56 - client3 is notified
+2019-03-23 21:59:01 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-23 21:59:01 INFO  Client:88 -    client3 exits the stock
+
+2019-03-23 21:59:01 INFO  Runner:63 -      -^-^-^-^- All clients exited stock -^-^-^-^- 
+
+2019-03-23 21:59:01 INFO  Runner:64 -         ^-^-^-^-^-^ Bargaining ends ^-^-^-^-^-^ 
+
+
+2019-03-24 12:31:33 INFO  Runner:26 - Reading and creating clients from file
+2019-03-24 12:31:33 INFO  Runner:32 - List of clients has been created successfully
+2019-03-24 12:31:33 INFO  Stock:100 -    stock begin running
+
+2019-03-24 12:31:33 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-24 12:31:33 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:31:33 INFO  Client:56 - client1 is notified
+2019-03-24 12:31:33 INFO  Client:56 - client2 is notified
+2019-03-24 12:31:33 INFO  Client:56 - client3 is notified
+2019-03-24 12:31:33 INFO  Client:56 - client4 is notified
+2019-03-24 12:31:33 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:31:33 INFO  Stock:102 -    stock end running
+
+2019-03-24 12:31:33 INFO  Client:72 -    ---- client1 entered the stock ----
+2019-03-24 12:31:33 INFO  Client:74 - client1 coefficients: [1.2134320807925285, 2.0]
+2019-03-24 12:31:33 INFO  Client:79 - client1 buys USD for 45.0 BYN
+
+2019-03-24 12:31:33 INFO  Stock:82 -      ####    new coefficient: 2.2    ####
+
+2019-03-24 12:31:33 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:31:33 INFO  Client:56 - client1 is notified
+2019-03-24 12:31:33 DEBUG Client:91 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:31:33 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:31:33 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:31:34 INFO  Client:56 - client2 is notified
+2019-03-24 12:31:34 INFO  Client:56 - client3 is notified
+2019-03-24 12:31:34 INFO  Client:56 - client4 is notified
+2019-03-24 12:31:34 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:31:34 INFO  Client:88 -    client1 exits the stock
+
+2019-03-24 12:31:34 INFO  Client:72 -    ---- client4 entered the stock ----
+2019-03-24 12:31:34 INFO  Client:74 - client4 coefficients: [1.4593808929176262, 2.0, 2.2]
+2019-03-24 12:31:34 DEBUG Client:91 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:31:34 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:31:34 INFO  Client:82 - client4 sells 10.0 USD
+
+2019-03-24 12:31:34 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-24 12:31:34 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:31:34 INFO  Client:56 - client2 is notified
+2019-03-24 12:31:34 INFO  Client:56 - client3 is notified
+2019-03-24 12:31:34 INFO  Client:56 - client4 is notified
+2019-03-24 12:31:34 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:31:34 INFO  Client:88 -    client4 exits the stock
+
+2019-03-24 12:31:34 INFO  Client:72 -    ---- client2 entered the stock ----
+2019-03-24 12:31:34 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:31:34 INFO  Client:74 - client2 coefficients: [1.072413031366754, 2.0, 2.2, 2.0]
+2019-03-24 12:31:34 INFO  Client:82 - client2 sells 454.5454545454545 USD
+
+2019-03-24 12:31:34 INFO  Stock:82 -      ####    new coefficient: 1.8    ####
+
+2019-03-24 12:31:34 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:31:34 INFO  Client:56 - client2 is notified
+2019-03-24 12:31:35 INFO  Client:56 - client3 is notified
+2019-03-24 12:31:35 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:31:35 INFO  Client:88 -    client2 exits the stock
+
+2019-03-24 12:31:35 INFO  Client:72 -    ---- client3 entered the stock ----
+2019-03-24 12:31:35 INFO  Client:74 - client3 coefficients: [1.0775831405249063, 2.0, 2.2, 2.0, 1.8]
+2019-03-24 12:31:35 INFO  Client:82 - client3 sells 147.27272727272725 USD
+
+2019-03-24 12:31:35 INFO  Stock:82 -      ####    new coefficient: 1.6    ####
+
+2019-03-24 12:31:35 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:31:35 INFO  Client:56 - client3 is notified
+2019-03-24 12:31:35 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:31:35 INFO  Client:88 -    client3 exits the stock
+
+2019-03-24 12:31:35 INFO  Runner:63 -      -^-^-^-^- All clients exited stock -^-^-^-^- 
+
+2019-03-24 12:31:35 INFO  Runner:64 -         ^-^-^-^-^-^ Bargaining ends ^-^-^-^-^-^ 
+
+
+2019-03-24 12:35:34 INFO  Runner:26 - Reading and creating clients from file
+2019-03-24 12:35:34 INFO  Runner:32 - List of clients has been created successfully
+
+2019-03-24 12:35:34 INFO  Runner:34 -         ^-^-^-^-^-^ Bargaining begins ^-^-^-^-^-^  
+
+2019-03-24 12:35:34 INFO  Stock:100 -    stock begin running
+
+2019-03-24 12:35:34 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-24 12:35:34 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:35:34 INFO  Client:56 - client1 is notified
+2019-03-24 12:35:34 INFO  Client:56 - client2 is notified
+2019-03-24 12:35:34 INFO  Client:56 - client3 is notified
+2019-03-24 12:35:34 INFO  Client:56 - client4 is notified
+2019-03-24 12:35:35 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:35:35 INFO  Stock:102 -    stock end running
+
+2019-03-24 12:35:35 INFO  Client:72 -    ---- client1 entered the stock ----
+2019-03-24 12:35:35 INFO  Client:74 - client1 coefficients: [1.0264324488001593, 2.0]
+2019-03-24 12:35:35 DEBUG Client:91 -               $$$$   client2 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:35:35 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:35:35 INFO  Client:79 - client1 buys USD for 45.0 BYN
+
+2019-03-24 12:35:35 INFO  Stock:82 -      ####    new coefficient: 2.2    ####
+
+2019-03-24 12:35:35 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:35:35 INFO  Client:56 - client1 is notified
+2019-03-24 12:35:35 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:35:35 INFO  Client:56 - client2 is notified
+2019-03-24 12:35:35 INFO  Client:56 - client3 is notified
+2019-03-24 12:35:35 INFO  Client:56 - client4 is notified
+2019-03-24 12:35:35 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:35:35 INFO  Client:88 -    client1 exits the stock
+
+2019-03-24 12:35:35 INFO  Client:72 -    ---- client2 entered the stock ----
+2019-03-24 12:35:35 INFO  Client:74 - client2 coefficients: [1.1707872849155443, 2.0, 2.2]
+2019-03-24 12:35:35 INFO  Client:82 - client2 sells 499.99999999999994 USD
+
+2019-03-24 12:35:35 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:35:35 INFO  Stock:82 -      ####    new coefficient: 2.0    ####
+
+2019-03-24 12:35:35 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:35:35 INFO  Client:56 - client2 is notified
+2019-03-24 12:35:35 DEBUG Client:91 -               $$$$   client4 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:35:35 INFO  Client:56 - client3 is notified
+2019-03-24 12:35:35 INFO  Client:56 - client4 is notified
+2019-03-24 12:35:35 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:35:35 INFO  Client:88 -    client2 exits the stock
+
+2019-03-24 12:35:36 INFO  Client:72 -    ---- client4 entered the stock ----
+2019-03-24 12:35:36 DEBUG Client:91 -               $$$$   client3 tried to enter the stock, but somebody is already there   $$$$
+2019-03-24 12:35:36 INFO  Client:74 - client4 coefficients: [1.0527584996541144, 2.0, 2.2, 2.0]
+2019-03-24 12:35:36 INFO  Client:82 - client4 sells 9.09090909090909 USD
+
+2019-03-24 12:35:36 INFO  Stock:82 -      ####    new coefficient: 1.8    ####
+
+2019-03-24 12:35:36 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:35:36 INFO  Client:56 - client3 is notified
+2019-03-24 12:35:36 INFO  Client:56 - client4 is notified
+2019-03-24 12:35:36 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:35:36 INFO  Client:88 -    client4 exits the stock
+
+2019-03-24 12:35:36 INFO  Client:72 -    ---- client3 entered the stock ----
+2019-03-24 12:35:36 INFO  Client:74 - client3 coefficients: [1.2578034211798061, 2.0, 2.2, 2.0, 1.8]
+2019-03-24 12:35:36 INFO  Client:82 - client3 sells 147.27272727272725 USD
+
+2019-03-24 12:35:36 INFO  Stock:82 -      ####    new coefficient: 1.6    ####
+
+2019-03-24 12:35:36 INFO  Stock:83 - ****************( Participants Notify Starts )******************
+2019-03-24 12:35:36 INFO  Client:56 - client3 is notified
+2019-03-24 12:35:36 INFO  Stock:92 - ****************( Participants Notify Ends )******************
+
+2019-03-24 12:35:36 INFO  Client:88 -    client3 exits the stock
+
+2019-03-24 12:35:36 INFO  Runner:65 -      -^-^-^-^- All clients exited stock -^-^-^-^- 
+
+2019-03-24 12:35:36 INFO  Runner:66 -         ^-^-^-^-^-^ Bargaining ends ^-^-^-^-^-^ 
+
+

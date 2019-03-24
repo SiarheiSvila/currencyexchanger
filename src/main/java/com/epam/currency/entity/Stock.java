@@ -2,9 +2,9 @@ package com.epam.currency.entity;
 
 import com.epam.currency.entity.observerapi.Observable;
 import com.epam.currency.entity.observerapi.Observer;
-import com.epam.currency.logic.Deal;
 import com.epam.currency.logic.choiseofdecision.Decision;
-import com.epam.currency.util.ArgumentValidator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -12,16 +12,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Stock implements Observable {
+/**
+ * Stock has coefficient, it's own bank account and a List of clients to notify them if coefficient has changed
+ * When one client enters the stock, other are blocked
+ */
+public class Stock implements Observable, Runnable{
     private double coefficient;
     private List<Observer> observerList;
-    private HashMap<Integer, Deal> dealHashMap;
-    private List<Client> BuyCurrencyClientList;
-    private List<Client> SellCurrencyClientList;
+    private BankAccount stockAccount;
 
     private static Stock instance;
     private static AtomicBoolean initialized = new AtomicBoolean(false);
-    private static Lock locker = new ReentrantLock();
+    private static Lock lock = new ReentrantLock();
+    private static final Logger LOGGER = LogManager.getLogger(Stock.class);
 
     private Stock() {
         if(instance != null){
@@ -29,22 +32,21 @@ public class Stock implements Observable {
         }
 
         observerList = new ArrayList<>(Collections.emptyList());
-        dealHashMap = new HashMap<>();
         coefficient = 2;
-        BuyCurrencyClientList = new ArrayList<>(Collections.emptyList());
-        SellCurrencyClientList = new ArrayList<>(Collections.emptyList());
+
+        stockAccount = new BankAccount(10000000,10000000);
     }
 
     public static Stock getInstance(){
         if(!initialized.get()){
             try {
-                locker.lock();
+                lock.lock();
                 if (instance == null) {
                     instance = new Stock();
                     initialized.set(true);
                 }
             }finally {
-                locker.unlock();
+                lock.unlock();
             }
         }
         return instance;
@@ -54,112 +56,135 @@ public class Stock implements Observable {
         return coefficient;
     }
 
-    public void setCoefficient(double coefficient) {
-        this.coefficient = coefficient;
-    }
-
     @Override
     public void addObserver(Observer observer) {
-        ArgumentValidator.checkForNull(observer);
+        if (observer == null) {
+            LOGGER.warn("Error, observer can't be null");
+            throw new IllegalArgumentException("Error in addObserverMethod");
+        }
         observerList.add(observer);
     }
 
     @Override
     public void removeObserver(Observer observer) {
-        ArgumentValidator.checkForNull(observer);
+        if (observer == null) {
+            LOGGER.warn("Error, observer can't be null");
+            throw new IllegalArgumentException("Error in removeObserverMethod");
+        }
         observerList.remove(observer);
     }
 
     @Override
     public void notifyObserver() {
-        System.out.println();
-        System.out.println("****************( Participants Notify Starts )******************");
-        for (Observer o : observerList) {
-            o.update(this);
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                //logger.error("InterruptedException at notify observer method",e);
-            }
-        }
-        System.out.println("****************( Participants Notify Ends )******************");
-        System.out.println();
-    }
-
-    public synchronized void sell(Client client) {  //sell USD
-        Collections.sort(SellCurrencyClientList);
-        SellCurrencyClientList.add(client);
+        lock.lock();
 
         try {
-            TimeUnit.MILLISECONDS.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            LOGGER.info("     ####    new coefficient: " + coefficient + "    ####\n");
+            LOGGER.info("****************( Participants Notify Starts )******************");
+            for (Observer o : observerList) {
+                o.update(this);
+                try {
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException e) {
+                    //logger.error("InterruptedException at notify observer method",e);
+                }
+            }
+            LOGGER.info("****************( Participants Notify Ends )******************\n");
+        } finally {
+            lock.unlock();
         }
     }
 
-    public synchronized void buy(Client client) {   //buy USD for Rubles
-        Collections.sort(BuyCurrencyClientList);
-        BuyCurrencyClientList.add(client);
-
-        try {
-            TimeUnit.MILLISECONDS.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public void run() {
+        LOGGER.info("   " + Thread.currentThread().getName() + " begin running\n");
+        notifyObserver();
+        LOGGER.info("   " + Thread.currentThread().getName() + " end running\n");
     }
 
-    public void createDeal() {
-        int amountOfSellClients = SellCurrencyClientList.size();
-        int amountOfBuyClients = BuyCurrencyClientList.size();
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (getClass() != o.getClass()) return false;
+        Stock stock = (Stock) o;
 
-        int smallerAmountOfClients;
+        if (stock.coefficient != coefficient) return false;
+        if (!stockAccount.equals(stock.stockAccount)) return false;
 
-        if (amountOfSellClients > amountOfBuyClients) {
-            smallerAmountOfClients = amountOfBuyClients;
+        return observerList.equals(stock.observerList);
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (53*coefficient + 14*observerList.hashCode() + 37*stockAccount.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "coefficient=" + coefficient +
+                ", observerList=" + observerList +
+                ", stockAccount=" + stockAccount +
+                '}';
+    }
+
+    public void sell(Client client) {
+        if (client == null) {
+            LOGGER.warn("Error, client can't be null");
+            throw new IllegalArgumentException("Error in sellMethod");
+        }
+
+        Decision clientDecision = client.getDecision();
+        double dealMoneyAmountUSD = clientDecision.getMoney();
+        double dealMoneyAmountBYN = dealMoneyAmountUSD*coefficient;
+
+        BankAccount clientAccount = client.getBankAccount();
+
+        if (clientAccount.getUSD() < dealMoneyAmountUSD) {
+            LOGGER.warn("Sorry, client doesn't have enough money. A deal can't be made");
         } else {
-            smallerAmountOfClients = amountOfSellClients;
+            clientAccount.subtractUSD(dealMoneyAmountUSD);
+            stockAccount.addUSD(dealMoneyAmountUSD);
+            clientAccount.addBYN(dealMoneyAmountBYN);
+            stockAccount.subtractBYN(dealMoneyAmountUSD);
         }
 
-        for (int i=0; i<smallerAmountOfClients; ++i) {
+        makeCoefficientSmaller();
+    }
 
-            double USDDealAmount;
-            Client buyClient = BuyCurrencyClientList.get(i);
-            Client sellClient = SellCurrencyClientList.get(i);
-
-            Decision decision = buyClient.getDecision();
-            double buyClientDealMoney = decision.getMoney()/2;
-
-            decision = sellClient.getDecision();
-            double sellClientDealMoney = decision.getMoney()/2;
-
-            if (buyClientDealMoney < sellClientDealMoney) {
-                USDDealAmount = buyClientDealMoney;
-            } else {
-                USDDealAmount = sellClientDealMoney;
-            }
-
-            Deal deal = new Deal(coefficient, buyClient.getClientAccount(), sellClient.getClientAccount(), USDDealAmount);
-            deal.makeDeal();
-
-            if (deal.isFinished()) {
-                dealHashMap.put(deal.getId(), deal);
-
-                BuyCurrencyClientList.remove(i);
-                SellCurrencyClientList.remove(i);
-                i--;
-            }
+    public void buy(Client client) {
+        if (client == null) {
+            LOGGER.warn("Error, client can't be null");
+            throw new IllegalArgumentException("Error in buyMethod");
         }
-        double differenceOfClientsAmount = (double)amountOfSellClients/amountOfBuyClients;
 
-        Random random = new Random();
-        /////
-        double changeCoefficientValue = random.nextDouble();  //  (0,7 ; 1)
+        Decision clientDecision = client.getDecision();
+        double dealMoneyAmountBYN = clientDecision.getMoney();
+        double dealMoneyAmountUSD = dealMoneyAmountBYN/coefficient;
 
-        if (differenceOfClientsAmount <= 1) {
-            coefficient /= changeCoefficientValue;
+        BankAccount clientAccount = client.getBankAccount();
+
+        if (clientAccount.getBYN() < dealMoneyAmountBYN) {
+            LOGGER.warn("Sorry, client doesn't have enough money. A deal can't be made");
         } else {
-            coefficient *= changeCoefficientValue;
+            clientAccount.subtractBYN(dealMoneyAmountBYN);
+            stockAccount.addBYN(dealMoneyAmountBYN);
+            clientAccount.addUSD(dealMoneyAmountUSD);
+            stockAccount.subtractUSD(dealMoneyAmountUSD);
         }
+
+        makeCoefficientBigger();
+    }
+
+    private void makeCoefficientSmaller() {
+        coefficient -= 0.2;
+
+        notifyObserver();
+    }
+
+    private void makeCoefficientBigger() {
+        coefficient += 0.2;
 
         notifyObserver();
     }

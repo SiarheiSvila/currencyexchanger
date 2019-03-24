@@ -1,19 +1,21 @@
 package com.epam.currency.logic.choiseofdecision;
 
 import com.epam.currency.entity.Client;
-import com.epam.currency.entity.ClientAccount;
+import com.epam.currency.entity.BankAccount;
 import com.epam.currency.entity.Stock;
 
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Sells some USD to get maximum profit
+ */
 public class SellCurrency implements Decision {
-
     private double money;
 
     @Override
-    public synchronized void setMoney(Client client) {
-        ClientAccount clientAccount = client.getClientAccount();
+    public void setMoney(Client client) {
+        BankAccount clientAccount = client.getBankAccount();
 
         List<Double> coefficients = client.getCoefficients();
 
@@ -23,18 +25,11 @@ public class SellCurrency implements Decision {
         Stock stock = Stock.getInstance();
         double newBidInUSD = stock.getCoefficient()*currentUSD/maxTariff;
 
-
-
         money = newBidInUSD;
     }
 
     @Override
-    public void setMoney(double money) {
-        this.money = money;
-    }
-
-    @Override
-    public synchronized double getMoney() {
+    public double getMoney() {
         return money;
     }
 }

@@ -1,73 +1,135 @@
 package com.epam.currency.entity;
 
 import com.epam.currency.entity.observerapi.Observer;
+import com.epam.currency.logic.Controller;
 import com.epam.currency.logic.choiseofdecision.BuyCurrency;
 import com.epam.currency.logic.choiseofdecision.Decision;
 import com.epam.currency.logic.choiseofdecision.DoNothing;
 import com.epam.currency.logic.choiseofdecision.SellCurrency;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
-public class Client implements Observer, Runnable, Comparable<Client>{
+/**
+ * Client of the Stock
+ * He has id, bankAccount, all coefficients that had ever appeared on the stock and decision
+ * Implements observer to add new coefficient to list, when it changes
+ * When object is created, first element in coefficients is preferred coefficient
+ */
+public class Client implements Observer, Runnable{
 
-    private ClientAccount clientAccount;
-    private Lock lock = new ReentrantLock();
+    private final Integer id;
+    private BankAccount clientAccount;
     private List<Double> coefficients;
     private Decision decision;
 
-    public Client(double BYN, double USD, Decision decision) {
-        clientAccount = new ClientAccount(BYN, USD);
-        coefficients = new ArrayList<>(Collections.emptyList());
+    private static final Logger LOGGER = LogManager.getLogger(Client.class);
+
+    public Client(Integer id, double BYN, double USD, Decision decision) {
+        this.id = id;
+        clientAccount = new BankAccount(BYN, USD);
+        coefficients = new ArrayList<>(Arrays.asList(preferredCoefficientCount()));
         this.decision = decision;
+    }
+
+    public Client(Integer id, double BYN, double USD) {
+        this.id = id;
+        clientAccount = new BankAccount(BYN, USD);
+        coefficients = new ArrayList<>(Arrays.asList(preferredCoefficientCount()));
+        decision = new DoNothing();
+    }
+
+    public Client() {
+        id = 0;
+    }
+
+    private double preferredCoefficientCount() {
+        return  2*(Math.random() * 0.3) + 1;
     }
 
     @Override
     public void update(Stock stock) {
-        System.out.println(Thread.currentThread().getName() + " is notified");
+        LOGGER.info("client" + id + " is notified");
         double currentCoefficient = stock.getCoefficient();
         coefficients.add(currentCoefficient);
     }
 
     @Override
-    public int compareTo(Client o) {
-        Decision parameterDecision = o.getDecision();
-        Double parameterDecisionMoneyAmount = parameterDecision.getMoney();
-        double thisDecisionMoneyAmount = decision.getMoney();
+    public void run() {
+        Controller controller = Controller.getInstance();
+        Stock stock = Stock.getInstance();
 
-        return parameterDecisionMoneyAmount.compareTo(thisDecisionMoneyAmount);
+        while (decision instanceof DoNothing) {
+
+            if (controller.isFree()) {
+
+                controller.setOccupied();
+
+                LOGGER.info("   ---- " + Thread.currentThread().getName() + " entered the stock ----");
+
+                LOGGER.info(Thread.currentThread().getName() + " coefficients: " + coefficients);
+
+                makeDecision();
+
+                if (decision instanceof BuyCurrency) {
+                    LOGGER.info(Thread.currentThread().getName() + " buys USD for " + decision.getMoney() + " BYN\n");
+                    stock.buy(this);
+                } else if (decision instanceof SellCurrency) {
+                    LOGGER.info(Thread.currentThread().getName() + " sells " + decision.getMoney() + " USD\n");
+                    stock.sell(this);
+                }
+
+                controller.setFree();
+                stock.removeObserver(this);
+                LOGGER.info("   " + Thread.currentThread().getName() + " exits the stock\n");
+            } else {
+
+                LOGGER.debug("              $$$$   " + Thread.currentThread().getName() + " tried to enter the stock, but somebody is already there   $$$$");
+                try {
+                    TimeUnit.MILLISECONDS.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override
-    public void run() {
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (getClass() != o.getClass()) return false;
+        Client client = (Client) o;
 
-        Stock stock = Stock.getInstance();
+        if (id != client.id) return false;
+        if (!clientAccount.equals(client.clientAccount)) return false;
+        return coefficients.equals(client.coefficients);
+    }
 
-        for (int i=0; i<5; i++) {
-            if (i != 0) {
-                decision = makeDecision();
-            }
+    @Override
+    public int hashCode() {
+        return 34*coefficients.hashCode() + 21*decision.hashCode() + 76*id + 4*clientAccount.hashCode();
+    }
 
-            double moneyAmount = decision.getMoney();
-
-            if (decision instanceof BuyCurrency) {
-                stock.buy(this);
-            } else if (decision instanceof SellCurrency) {
-                stock.sell(this);
-            }
-
-        }
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", clientAccount=" + clientAccount +
+                ", coefficients=" + coefficients +
+                ", decision=" + decision +
+                '}';
     }
 
     public Decision getDecision() {
         return decision;
     }
 
-    public ClientAccount getClientAccount() {
+    public BankAccount getBankAccount() {
         return clientAccount;
     }
 
@@ -75,65 +137,24 @@ public class Client implements Observer, Runnable, Comparable<Client>{
         return coefficients;
     }
 
-    public Decision makeDecision() {
-        lock.lock();
+    public Integer getId() {
+        return id;
+    }
 
+    public void makeDecision() {
         Stock stock = Stock.getInstance();
+        int amountOfActions = coefficients.size();
+        double previousCoefficient = coefficients.get(amountOfActions - 2);
 
-        Decision decision;
-        try {
-            ///
-            System.out.println("  makeDecision " + Thread.currentThread().getName());
+        double coefficientDifference = stock.getCoefficient() / previousCoefficient;
 
-//            if (coefficients.isEmpty()) {  // If it is the first lap of CurrencyExchange
-//                Random random = new Random();
-//                double preferredTariff = 8 * random.nextDouble();
-//
-//                if (preferredTariff >= stock.getCoefficient()) {  //коэффициент уменьшился
-//                    decision = new BuyCurrency();                  //buy USD for Rubles
-//
-//                } else {                                    //коэффициент вырос
-//                    decision = new SellCurrency();                  //sell USD
-//                }
-//
-//            } else {
-
-
-                int amountOfActions = coefficients.size();
-                double previousTariff = coefficients.get(amountOfActions - 2);
-
-                double tariffDifference = stock.getCoefficient() / previousTariff;
-
-                if (tariffDifference >= 1.3) {
-                    decision = new BuyCurrency();
-                    decision.setMoney(this);
-
-                } else if (tariffDifference < 1) {
-                    decision = new SellCurrency();
-                    decision.setMoney(this);
-
-                } else {
-                    decision = new DoNothing();
-
-                }
-
-//            }
-
-            double currentTariff = stock.getCoefficient();
-            coefficients.add(currentTariff);
-
-
-        } finally {
-            lock.unlock();
+        if (coefficientDifference >= 1.3) {
+            decision = new BuyCurrency();
+            decision.setMoney(this);
+         } else {
+            decision = new SellCurrency();
+            decision.setMoney(this);
         }
-        return decision;
     }
-
-    public void getClientInfo() {
-        System.out.println(Thread.currentThread().getName());
-        System.out.println(Thread.currentThread().getName() + "   Money: " + clientAccount.getUSD() + "$   " + clientAccount.getBYN() + "P");
-    }
-
-
 }
 
